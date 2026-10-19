@@ -13,9 +13,7 @@ window.homepageContent = {
     employer: 'Chongqing Youth Vocational & Technical College', employerCollege: 'School of Artificial Intelligence', job: 'Full-time Faculty Member',
     phdDate: 'September 2026 – Present', mastersDate: 'September 2022 – June 2025', workDate: 'September 2025 – June 2026',
     biographyParagraphs: [
-      'I am a Ph.D. student at the College of Computer and Information Science, Southwest University, Chongqing, China. I began my doctoral studies in September 2026.',
-      'My research focuses on online learning, learning with missing features, and concept drift adaptation, with an emphasis on model adaptability, robustness, and predictive performance under incomplete and evolving data distributions.',
-      "I completed my master's studies in Computer Technology at Chongqing Normal University in June 2025. From September 2025 to June 2026, I worked as a full-time faculty member at the School of Artificial Intelligence, Chongqing Youth Vocational & Technical College."
+      "I am a Ph.D. student at the College of Computer and Information Science, Southwest University, Chongqing, China, where I began my doctoral studies in September 2026. My research focuses on online learning, learning with missing features, and concept drift adaptation, with an emphasis on model adaptability, robustness, and predictive performance under incomplete and evolving data distributions. I completed my master's studies in Computer Technology at Chongqing Normal University in June 2025 and subsequently served as a full-time faculty member at the School of Artificial Intelligence, Chongqing Youth Vocational & Technical College, from September 2025 to June 2026."
     ],
     interests: ['Online Learning', 'Learning with Missing Features', 'Concept Drift Adaptation', 'Temporal Pattern Learning'],
     institutionLabel: 'Institution', collegeLabel: 'College', locationLabel: 'Location', emailLabel: 'Email',
@@ -32,9 +30,7 @@ window.homepageContent = {
     employer: '重庆青年职业技术学院', employerCollege: '人工智能学院', job: '专任教师',
     phdDate: '2026年9月—至今', mastersDate: '2022年9月—2025年6月', workDate: '2025年9月—2026年6月',
     biographyParagraphs: [
-      '我目前是西南大学计算机与信息科学学院博士研究生，于2026年9月开始博士阶段的学习。',
-      '我的研究方向主要包括在线学习、缺失特征学习和概念漂移适应，重点关注特征不完整、数据分布动态变化等复杂环境下的模型适应性、鲁棒性与预测性能。',
-      '我于2025年6月完成重庆师范大学计算机技术专业的硕士阶段学习。2025年9月至2026年6月期间，我曾在重庆青年职业技术学院人工智能学院担任专任教师。'
+      '我目前是位于中国重庆的西南大学计算机与信息科学学院博士研究生，于2026年9月开始博士阶段的学习。我的研究方向主要包括在线学习、缺失特征学习和概念漂移适应，重点关注特征不完整、数据分布动态变化等复杂环境下的模型适应性、鲁棒性与预测性能。我于2025年6月完成重庆师范大学计算机技术专业的硕士阶段学习，随后于2025年9月至2026年6月在重庆青年职业技术学院人工智能学院担任专任教师。'
     ],
     interests: ['在线学习', '缺失特征学习', '概念漂移适应', '时间模式学习'],
     institutionLabel: '学校', collegeLabel: '学院', locationLabel: '地点', emailLabel: '邮箱',
