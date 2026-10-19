@@ -3,12 +3,12 @@ import http from 'node:http';
 import { readFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 const root = new URL('../', import.meta.url);
-const types = { '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8', '.svg': 'image/svg+xml', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.png': 'image/png', '.webp': 'image/webp' };
+const types = { '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.svg': 'image/svg+xml', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.png': 'image/png', '.webp': 'image/webp' };
 http.createServer(async (req, res) => {
   const pathname = new URL(req.url, 'http://localhost').pathname;
   if (pathname === '/') { res.writeHead(302, { Location: '/Homepage/' }); res.end(); return; }
   const relative = pathname === '/Homepage/' ? 'index.html' : pathname.replace(/^\/Homepage\//, '');
-  if (!pathname.startsWith('/Homepage/') || !(relative === 'index.html' || /^assets\/(css|images)\/[a-zA-Z0-9_./-]+$/.test(relative)) || relative.includes('..')) {
+  if (!pathname.startsWith('/Homepage/') || !(relative === 'index.html' || /^assets\/(css|images|js)\/[a-zA-Z0-9_./-]+$/.test(relative)) || relative.includes('..')) {
     res.writeHead(404); res.end('Not found'); return;
   }
   try {

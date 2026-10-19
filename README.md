@@ -4,11 +4,13 @@ Personal Academic Homepage of Jiacai Han
 ## Website
 
 Buildless HTML and CSS for https://hanjiacai.github.io/Homepage/.
-No framework, backend, analytics, external fonts, or JavaScript is needed by the page.
+No framework, backend, analytics, or external fonts. Two small local JavaScript files provide bilingual content and switching; the existing English HTML remains a fallback when JavaScript is unavailable.
 
 ```text
-index.html                 English profile and section content
+index.html                 Shared page structure and English fallback
 assets/css/style.css       Responsive layout and appearance
+assets/js/content.js       English / Chinese text and shared publication data
+assets/js/language.js      Language selection, rendering, and persistence
 assets/images/             Portrait and other approved public images
 .nojekyll                  Serve static files without Jekyll processing
 scripts/preview.mjs        Optional local preview (Node.js only)
@@ -30,15 +32,15 @@ Check both desktop and mobile widths after edits.
 
 ## Update content
 
-- **Biography:** edit the paragraphs in `index.html` under `id="biography"`.
-- **Research interests / education / work experience:** edit the corresponding sections in `index.html`. Dates, affiliations, and the master's field (Computer Technology) are owner-supplied. The formal doctoral field and specific master's degree type remain unverified and are not asserted. Keep the Biography consistent with these entries.
+- **Biography:** edit `en.biographyParagraphs` and `zh.biographyParagraphs` in `assets/js/content.js`.
+- **Research interests / education / work experience:** edit `en` and `zh` in `assets/js/content.js` (the `interests` arrays, school/college/role and date fields). The formal doctoral field and specific master's degree type remain unverified and are not asserted. Keep the Biography consistent with these entries.
 - **Portrait:** replace `assets/images/portrait.jpg` with your new approved photo. The page displays it using the `portrait` class. Check the desktop and mobile crop after replacing it.
 - **Email:** update both the visible address and the `mailto:` target in Contact. The current address was supplied for publication by the owner.
 - **ORCID:** currently hidden. Add a link at the header's ORCID comment only after confirming the real profile URL.
-- **Publications:** manually maintained in `index.html` inside `<section id="publications">`. There is no automatic Google Scholar synchronization, scheduled fetch, or update workflow. Add a confirmed `article` using the template below, newest first. Titles link to DOI records; use full author names, bold Jiacai Han, and italicize the journal. The Google Scholar profile remains available in the header. Citation counts are omitted because they change. Add PDF/code links only when public sharing is permitted.
+- **Publications:** manually maintained in the shared `publications` array in `assets/js/content.js`. Add one object with `title`, `authors` (ordered array), `journal`, `volume`, `article`, `year`, and `doi`. Both languages use that same object and sort by year descending. There is no automatic Scholar synchronization. Official titles, author names, journals, DOI URLs, and email remain unchanged across languages.
 - **Projects / awards:** add a new `section` with a unique `id` and `h2`, then a matching navigation link. Include only confirmed, public information.
 
-Publication template (not an actual publication; do not publish unfilled):
+The English markup below is the no-JavaScript fallback template only. Normal bilingual content is rendered from `content.js`; when maintaining a current no-JavaScript fallback is important, also update the corresponding English HTML. Do not maintain a second Chinese page.
 
 ```html
 <article class="publication">
@@ -47,6 +49,16 @@ Publication template (not an actual publication; do not publish unfilled):
   <p><em>CONFIRMED_VENUE</em>, CONFIRMED_YEAR.</p>
 </article>
 ```
+
+## Language behavior and checks
+
+- First visit defaults to English. An explicit valid `?lang=en` or `?lang=zh` wins over the saved preference; otherwise `localStorage` key `homepage-language` is used.
+- Clicking EN / 中文 immediately translates content, updates HTML `lang`, title and description, saves the choice, and updates the query parameter while retaining other query parameters and the hash. Storage failures do not prevent switching.
+- Only the owner's explicit button selection is saved. Opening a language-specific URL overrides the saved language for that visit without changing the preference.
+- Use `http://127.0.0.1:8000/Homepage/?lang=zh#contact` to test a Chinese deep link. Test `?lang=en` too, click the buttons, refresh, then remove `lang` to verify persistence. An incognito window without a saved choice should start in English.
+- After an explicitly approved deployment, repeat those checks at `https://hanjiacai.github.io/Homepage/`. No new Pages route or deployment configuration is required. JavaScript and CSS paths remain relative to `/Homepage/`.
+- Verify both mobile and desktop widths, keyboard button activation, email, DOI links, and Scholar/GitHub entries. Scripts can be syntax checked with `node --check assets/js/content.js` and `node --check assets/js/language.js`.
+- The romanized owner name is retained in both languages; no unconfirmed Chinese personal name or translated publication title is invented.
 
 Use relative resource paths such as `assets/images/portrait.jpg`, not `/assets/...`.
 The relative paths work at `/Homepage/` and in a local file preview.
@@ -59,7 +71,7 @@ From this repository only:
 ```powershell
 git status --short
 git diff --check
-git add -- index.html assets/css/style.css assets/images/favicon.svg assets/images/portrait.jpg .gitignore .nojekyll scripts/preview.mjs README.md
+git add -- index.html assets/css/style.css assets/js/content.js assets/js/language.js assets/images/favicon.svg assets/images/portrait.jpg .gitignore .nojekyll scripts/preview.mjs README.md
 git diff --cached --stat
 git commit -m "Create academic homepage for Jiacai Han"
 git push origin main
