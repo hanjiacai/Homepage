@@ -10,7 +10,7 @@ window.homepageContent = {
     description: 'Jiacai Han is a Ph.D. student at Southwest University researching online learning, learning with missing features, concept drift adaptation, and temporal pattern learning.',
     home: 'Home', biography: 'Biography', research: 'Research Interests', education: 'Education', experience: 'Work Experience', publications: 'Publications', contact: 'Contact',
     university: 'Southwest University', college: 'College of Computer and Information Science', position: 'Ph.D. Student', location: 'Chongqing, China',
-    mastersUniversity: 'Chongqing Normal University', mastersCollege: 'College of Computer and Information Sciences', mastersPosition: "Master's Studies in Computer Technology",
+    mastersUniversity: 'Chongqing Normal University', mastersCollege: 'College of Computer and Information Science', mastersPosition: "Master's Degree in Computer Technology",
     employer: 'Chongqing Youth Vocational & Technical College', employerCollege: 'School of Artificial Intelligence', job: 'Full-time Faculty Member',
     phdDate: 'September 2026 – Present', mastersDate: 'September 2022 – June 2025', workDate: 'September 2025 – June 2026',
     biographyParagraphs: [
@@ -28,7 +28,7 @@ window.homepageContent = {
     description: '西南大学计算机与信息科学学院博士研究生韩佳材，研究方向包括在线学习、缺失特征学习、概念漂移适应和时间模式学习。',
     home: '首页', biography: '个人简介', research: '研究方向', education: '教育经历', experience: '工作经历', publications: '学术论文', contact: '联系方式',
     university: '西南大学', college: '计算机与信息科学学院', position: '博士研究生', location: '中国，重庆',
-    mastersUniversity: '重庆师范大学', mastersCollege: '计算机与信息科学学院', mastersPosition: '计算机技术专业硕士阶段学习',
+    mastersUniversity: '重庆师范大学', mastersCollege: '计算机与信息科学学院', mastersPosition: '计算机技术硕士学位',
     employer: '重庆青年职业技术学院', employerCollege: '人工智能学院', job: '专任教师',
     phdDate: '2026年9月—至今', mastersDate: '2022年9月—2025年6月', workDate: '2025年9月—2026年6月',
     biographyParagraphs: [
