@@ -31,6 +31,8 @@ main{padding-top:6px}
 section{padding-top:29px}
 h2{font-family:inherit;font-weight:500;font-size:25px;line-height:1.4;margin:0 0 15px;padding-bottom:9px;border-bottom:1px solid var(--line)}
 p{margin:0 0 12px}
+#biography p{line-height:1.5;margin-bottom:8px}
+#biography p:last-child{margin-bottom:0}
 .interests{display:grid;grid-template-columns:1fr 1fr;gap:5px 35px;margin:0;padding-left:20px}
 .interests li::marker{color:var(--blue)}
 .education-entry{display:flex;justify-content:space-between;gap:25px}
