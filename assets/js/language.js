@@ -33,7 +33,10 @@
     document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
     document.title = t.title;
     select('meta[name="description"]').content = t.description;
-    document.querySelectorAll('[data-i18n]').forEach(el => { el.textContent = t[el.dataset.i18n]; });
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const text = t[el.dataset.i18n];
+      if (typeof text === 'string') el.textContent = text;
+    });
     select('.portrait').alt = t.portraitAlt;
     select('.section-nav').setAttribute('aria-label', t.navigationLabel);
     select('.academic-links').setAttribute('aria-label', t.profilesLabel);
