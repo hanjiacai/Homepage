@@ -31,11 +31,11 @@ Check both desktop and mobile widths after edits.
 ## Update content
 
 - **Biography:** edit the paragraphs in `index.html` under `id="biography"`.
-- **Research interests / education / work experience:** edit the corresponding sections in `index.html`. Education and work entries use `education-entry` for consistent responsive formatting. Dates and affiliations are owner-supplied; the master's field and degree type are not specified. Keep the Biography consistent when updating these entries.
+- **Research interests / education / work experience:** edit the corresponding sections in `index.html`. Dates, affiliations, and the master's field (Computer Technology) are owner-supplied. The formal doctoral field and specific master's degree type remain unverified and are not asserted. Keep the Biography consistent with these entries.
 - **Portrait:** replace `assets/images/portrait.jpg` with your new approved photo. The page displays it using the `portrait` class. Check the desktop and mobile crop after replacing it.
 - **Email:** update both the visible address and the `mailto:` target in Contact. The current address was supplied for publication by the owner.
-- **ORCID:** replace the `span` with class `pending` with an anchor to your confirmed ORCID profile. Do not use an invented identifier or a dead `#` link.
-- **Publications:** use the template below to add confirmed entries, newest first. Keep author order and bibliographic details accurate. Current entries use the titles, abbreviated authors, venues, volumes, article numbers, and years supplied by the owner, with links to the supplied Google Scholar records. Citation counts are omitted because they change. Add PDF/code links only when public sharing is permitted.
+- **ORCID:** currently hidden. Add a link at the header's ORCID comment only after confirming the real profile URL.
+- **Publications:** manually maintained in `index.html` inside `<section id="publications">`. There is no automatic Google Scholar synchronization, scheduled fetch, or update workflow. Add a confirmed `article` using the template below, newest first. Titles link to DOI records; use full author names, bold Jiacai Han, and italicize the journal. The Google Scholar profile remains available in the header. Citation counts are omitted because they change. Add PDF/code links only when public sharing is permitted.
 - **Projects / awards:** add a new `section` with a unique `id` and `h2`, then a matching navigation link. Include only confirmed, public information.
 
 Publication template (not an actual publication; do not publish unfilled):
