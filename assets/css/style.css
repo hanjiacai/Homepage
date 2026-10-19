@@ -20,13 +20,13 @@ h1{margin:0 0 9px;font-family:Georgia,'Times New Roman',serif;font-size:46px;lin
 .portrait-placeholder svg{width:66px;height:74px;stroke:#94a6b6;stroke-width:1.5}
 .portrait{width:190px;height:auto;aspect-ratio:5/7;object-fit:contain}
 .section-nav{display:flex;flex-wrap:wrap;gap:9px 27px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:14px 0;font-size:14px}
-.language-switch{display:flex;align-items:center;gap:5px;margin-left:auto;color:var(--muted)}
+.language-switch{display:flex;align-items:center;gap:0;margin-left:auto;color:var(--muted);font-size:14px;line-height:1}
 .language-switch[hidden]{display:none}
-.language-switch button{font:inherit;color:var(--blue);background:none;border:0;cursor:pointer;min-height:32px;min-width:36px;padding:2px 4px}
-.language-switch button[aria-pressed="true"]{font-weight:700;text-decoration:underline;text-underline-offset:4px}
+.language-switch button{appearance:none;display:inline-flex;align-items:center;justify-content:center;flex:0 0 44px;width:44px;height:44px;margin:0;padding:0;font-family:Arial,'Microsoft YaHei','PingFang SC',sans-serif;font-size:14px;font-weight:400;line-height:1;color:var(--blue);background:transparent;border:0;border-radius:0;box-shadow:none;cursor:pointer}
+.language-switch button[aria-pressed="true"]{text-decoration:underline;text-underline-offset:5px;text-decoration-thickness:1px}
+.language-switch button:hover{text-decoration:underline;text-underline-offset:5px}
 .language-switch button:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
 html[lang="zh-CN"] .eyebrow{letter-spacing:.04em}
-@media(max-width:640px){.language-switch button{min-height:44px;min-width:44px}}
 main{padding-top:6px}
 section{padding-top:29px}
 h2{font-family:Georgia,'Times New Roman',serif;font-weight:500;font-size:25px;line-height:1.4;margin:0 0 15px;padding-bottom:9px;border-bottom:1px solid var(--line)}
