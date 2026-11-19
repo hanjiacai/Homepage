@@ -11,17 +11,17 @@
     section.querySelectorAll('.publication').forEach(el => el.remove());
     [...content.publications].sort((a, b) => b.year - a.year).forEach(p => {
       const entry = make('article', ''); entry.className = 'publication';
-      const heading = make('h3', ''); const link = make('a', p.title);
-      link.href = `https://doi.org/${p.doi}`; link.lang = 'en'; heading.append(link);
-      const authors = make('p', ''); authors.lang = 'en';
+      const citation = make('p', ''); const link = make('a', p.title);
+      link.href = `https://doi.org/${p.doi}`; link.lang = 'en';
       p.authors.forEach((author, i) => {
-        if (i) authors.append(', ');
-        authors.append(author === 'Jiacai Han' ? make('strong', author) : document.createTextNode(author));
+        if (i) citation.append(i === p.authors.length - 1 ? ' and ' : ', ');
+        citation.append(author === 'Jiacai Han' ? make('strong', author) : document.createTextNode(author));
       });
-      const citation = make('p', ''); const journal = make('em', p.journal); journal.lang = 'en';
-      citation.append(journal, t.citation.replace('{volume}', p.volume).replace('{article}', p.article).replace('{year}', p.year));
-      const doi = make('p', ''); const doiLink = make('a', `DOI: ${p.doi}`); doiLink.href = link.href; doi.append(doiLink);
-      entry.append(heading, authors, citation, doi); section.append(entry);
+      const journal = make('em', p.journal); journal.lang = 'en';
+      const doiLink = make('a', `doi: ${p.doi}`); doiLink.href = link.href;
+      citation.append(', ', link, ', ', journal, t.citation.replace('{volume}', p.volume).replace('{article}', p.article).replace('{year}', p.year), ' ', doiLink, '.');
+      if (p.annotations && p.annotations[document.documentElement.lang === 'zh-CN' ? 'zh' : 'en']) citation.append(` (${p.annotations[document.documentElement.lang === 'zh-CN' ? 'zh' : 'en']})`);
+      entry.append(citation); section.append(entry);
     });
   }
 

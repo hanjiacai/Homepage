@@ -1,8 +1,8 @@
 // Shared facts and bilingual text. Keep DOI titles and author order as published.
 window.homepageContent = {
   publications: [
-    {title: 'Residual BiLSTM based hybrid model for short-term load forecasting in buildings', authors: ['Jiacai Han', 'Pan Zeng'], journal: 'Journal of Building Engineering', volume: '99', article: '111593', year: 2025, doi: '10.1016/j.jobe.2024.111593'},
-    {title: 'Short-term power load forecasting based on hybrid feature extraction and parallel BiLSTM network', authors: ['Jiacai Han', 'Pan Zeng'], journal: 'Computers and Electrical Engineering', volume: '119', article: '109631', year: 2024, doi: '10.1016/j.compeleceng.2024.109631'}
+    {title: 'Residual BiLSTM based hybrid model for short-term load forecasting in buildings', authors: ['Jiacai Han', 'Pan Zeng'], journal: 'Journal of Building Engineering', volume: '99', article: '111593', year: 2025, doi: '10.1016/j.jobe.2024.111593', annotations: {en: 'CAS Zone 2 Top, IF 8.1', zh: '中科院二区 Top，IF 8.1'}},
+    {title: 'Short-term power load forecasting based on hybrid feature extraction and parallel BiLSTM network', authors: ['Jiacai Han', 'Pan Zeng'], journal: 'Computers and Electrical Engineering', volume: '119', article: '109631', year: 2024, doi: '10.1016/j.compeleceng.2024.109631', annotations: {en: 'CAS Zone 3, IF 5.5', zh: '中科院三区，IF 5.5'}}
   ],
   en: {
     name: 'Jiacai Han',
